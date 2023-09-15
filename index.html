@@ -50,10 +50,10 @@
         <header class="masthead bg-white text-left"> <!-- text-black 사용 가능 -->
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading mb-0">Audio Super-resolution with Robust Speech Representation Learning of Masked Autoencoder</h1>
+                <h1 class="masthead-heading mb-0">TranSentence: Speech-to-speech Translation via Language-agnostic Sentence-level Speech Encoding without Language-parallel Data</h1>
                 <!-- Masthead Subheading-->
                 <p class="pre-wrap lead">&nbsp;</p>
-                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Seung-Bin Kim, Sang-Hoon Lee, Ha-Yeong Choi, and Seong-Whan Lee</p>
+                <p class="pre-wrap masthead-subheading font-weight-light mb-0 font-italic">Seung-Bin Kim, Sang-Hoon Lee, and Seong-Whan Lee</p>
             </div>
         </header>
 
@@ -71,7 +71,7 @@
                 <!-- Portfolio Grid Items-->
                 <div class="row justify-content-center">
                     <div class="col-lg-12 ml-auto">
-                      <p class="pre-wrap lead">This paper proposes Fre-Painter, a high-fidelity audio super-resolution system that utilizes robust speech representation learning with various masking strategies. Recently, masked autoencoders have been found to be beneficial in learning robust representations of audio for speech classification tasks. Following these studies, we leverage these representations and investigate several masking strategies for neural audio super-resolution. In this paper, we propose an upper-band masking strategy with the initialization of the mask token, which is simple but efficient for audio super-resolution. Furthermore, we propose a mix-ratio masking strategy that makes the model robust for input speech with various sampling rates. For practical applicability, we extend Fre-Painter to a text-to-speech system, which synthesizes high-resolution speech using low-resolution speech data. The experimental results demonstrate that Fre-Painter outperforms other neural audio super-resolution models.</p>
+                      <p class="pre-wrap lead">Although there has been significant advancement in the field of speech-to-speech translation, conventional models still require language-parallel speech data between the source and target languages for training. In this paper, we introduce TranSentence, a novel speech-to-speech translation without language-parallel speech data. To achieve this, we first adopt a language-agnostic sentence-level speech encoding that captures the semantic information of speech, irrespective of the language. We then train our model to generate speech based on the encoded embeddings obtained from a language-agnostic sentence-level speech encoder that is pre-trained with diverse languages. With this method, despite training exclusively on the target language's monolingual data, we can generate target language speech in the inference stage using language-agnostic speech embeddings from the source language speech. Furthermore, we extend TranSentence to multilingual speech-to-speech translation. The experimental results demonstrate that TranSentence is superior to other models.</p>
                       <p class="pre-wrap lead">&nbsp;</p>
                       <p class="pre-wrap lead">&nbsp;</p>
                       <p class="pre-wrap lead">Official implementation of Fre-Painter: <a href="https://github.com/FrePainter/code">https://github.com/FrePainter/code</a></p>
