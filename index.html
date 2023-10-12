@@ -73,7 +73,6 @@
                     <div class="col-lg-12 ml-auto">
                       <p class="pre-wrap lead">Although there has been significant advancement in the field of speech-to-speech translation, conventional models still require language-parallel speech data between the source and target languages for training. In this paper, we introduce TranSentence, a novel speech-to-speech translation without language-parallel speech data. To achieve this, we first adopt a language-agnostic sentence-level speech encoding that captures the semantic information of speech, irrespective of the language. We then train our model to generate speech based on the encoded embeddings obtained from a language-agnostic sentence-level speech encoder that is pre-trained with diverse languages. With this method, despite training exclusively on the target language's monolingual data, we can generate target language speech in the inference stage using language-agnostic speech embeddings from the source language speech. Furthermore, we extend TranSentence to multilingual speech-to-speech translation. The experimental results demonstrate that TranSentence is superior to other models.</p>
                       <p class="pre-wrap lead">&nbsp;</p>
-                      <p class="pre-wrap lead">&nbsp;</p>
                       <p class="pre-wrap lead">Official implementation of TranSentence: <a href="https://github.com/sb-kim-prml/TranSentence">https://github.com/sb-kim-prml/TranSentence</a></p>
                     </div>
                 </div>
@@ -99,27 +98,27 @@
                             <tbody>
                               <tr>
                                 <td rowspan="1" style="vertical-align: top;"><p><strong>Source (Spanish)</strong></p>
-                                  <p><em>Tenía un hermano, Peter Jr.</em></p>
+                                  <p><em>Es una de las universidades más jóvenes de Polonia.</em></p>
                                   <audio id="" controls >
-                                      <source id="" src="audio/es-en/common_voice_es_19663935_src.wav" type="audio/wav" />
+                                      <source id="" src="audio/es-en/common_voice_es_19730956_src.wav" type="audio/wav" />
                                   </audio>
                                 </td>
                                 <td><p><strong>Reference (English)</strong></p>
-                                  <p><em>She had a brother peter jr.</em></p>
+                                  <p><em>It is one of the youngest universities in Poland.</em></p>
                                   <audio id="" controls >
-                                      <source id="" src="audio/es-en/common_voice_es_19663935_tgt.wav" type="audio/wav" />
+                                      <source id="" src="audio/es-en/common_voice_es_19730956_tgt.wav" type="audio/wav" />
                                   </audio>
                                 </td>
                                 <td><p><strong>TranSentence (English)</strong></p>
-                                  <p><em>He had a brother peter junior.</em></p>
+                                  <p><em>It is one of the youngest universities in Poland.</em></p>
                                   <audio id="" controls >
-                                      <source id="" src="audio/es-en/common_voice_es_19663935_pred.wav" type="audio/wav" />
+                                      <source id="" src="audio/es-en/common_voice_es_19730956_pred.wav" type="audio/wav" />
                                   </audio>
                                 </td>
                               </tr>
                               <tr>
                                 <td rowspan="1" style="vertical-align: top;"><p><strong>Source (Spanish)</strong></p>
-                                  <p><em>Dos años más tarde, la empresa diversificó sus productos, y comenzó su internacionalización.</em></p>
+                                  <p><em>Las obras nunca se han recuperado.</em></p>
                                   <audio id="" controls >
                                       <source id="" src="audio/es-en/common_voice_es_19611281_src.wav" type="audio/wav" />
                                   </audio>
@@ -238,7 +237,7 @@
                               </audio>
                             </td>
                             <td><p><strong>TranSentence (English)</strong></p>
-                              <p><em>That night she had received a letter from her father </em></p>
+                              <p><em>That night she had received a letter from her father.</em></p>
                               <audio id="" controls >
                                   <source id="" src="audio/fr-en/common_voice_fr_18462367_pred.wav" type="audio/wav" />
                               </audio>
