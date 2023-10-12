@@ -6,6 +6,9 @@
 - Based on [fairseq](https://github.com/facebookresearch/fairseq/tree/main)
 - Install fairseq following the installation guide of fairseq
 
+## Preprocessing
+
+
 ## Training
 ```
 MODEL_DIR=./logs/transentence
