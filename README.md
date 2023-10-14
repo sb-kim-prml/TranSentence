@@ -5,8 +5,48 @@
 - Python version >= 3.8
 - Based on [fairseq](https://github.com/facebookresearch/fairseq/tree/main)
 - Install fairseq following the installation guide of fairseq
+- Download and add additional code to fairseq
+```
+git clone https://github.com/sb-kim-prml/TranSentence
+```
 
 ## Preprocessing
+### Downsampling wavs to 16 kHz
+
+```
+RAW_DATA_ROOT=[Root of raw data]
+DATA_ROOT=[Root of downsampled wavs]
+CUDA_VISIBLE_DEVICES=0 python preprocess/downsample.py -i $RAW_DATA_ROOT \
+  -o $DATA_ROOT/wavs_16k
+```
+
+### Extracting units
+Following https://github.com/facebookresearch/fairseq/blob/main/examples/speech_to_speech/docs/enhanced_direct_s2st_discrete_units.md
+
+```
+wget -P ./ckpts https://github.com/pytorch/fairseq/blob/f591cc94caa85098ccf125a4782f91125b6a086d/fairseq/models/bart/model.py#L368
+
+wget -P ./ckpts https://dl.fbaipublicfiles.com/fairseq/speech_to_speech/s2st_finetuning/unit_mBART/checkpoint.pt
+```
+```
+sh sh/unit_extraction.sh $DATA_ROOT
+
+```
+### Extracting language-agnostic sentence-level speech embedding
+Following [SpeechMatrix](https://github.com/facebookresearch/fairseq/blob/ust/examples/speech_matrix/speech_laser_encoders.md)
+```
+wget -P ./ckpts https://dl.fbaipublicfiles.com/speechlaser_encoders/english.pt
+wget -P ./ckpts https://dl.fbaipublicfiles.com/speechlaser_encoders/romance.pt
+```
+```
+CUDA_VISIBLE_DEVICES=0,1 python preprocess/speech_encoding.py -i $DATA_ROOT/wavs_16k
+```
+
+### Making train filelist
+```
+python preprocess/make_filelist.py -i $DATA_ROOT
+```
+
 
 
 ## Training
